@@ -1,0 +1,215 @@
+<html>
+<head>
+<title>File trash</title>
+<meta charset="utf-8">
+<style>
+
+div {
+  border: 1px solid red;
+}
+
+a {
+  background: #7ff;
+}
+
+body {
+  background: gray;
+  padding: 20px;
+}
+
+.blockeddiv {
+  display: none;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.subheader {
+  text-align: right;
+  height: 5%;
+}
+
+.footer {
+  height: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.inlineddiv {
+  display: flex;
+  border: 1px solid red;
+  height: 80%;
+}
+
+.inlineddiv2 {
+  display: flex;
+}
+
+.leftdiv {
+  width: 25%;
+  border: 1px solid green;
+}
+
+.rightdiv {
+  width: 25%;
+  border: 1px solid green;
+}
+
+.centerdiv {
+  width: 50%;
+  border: 1px solid green;
+}
+
+.center {
+  align-content: center;
+  text-align: center;
+}
+
+.redlink {
+  color: red;
+}
+
+img {
+  width: 10%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <img src="folder.png" >
+    <p > File trash</p>
+    <img src="folder.png" >
+  </div>
+
+  <div id="login">
+
+    <div class="subheader">
+      You have to login
+    </div>
+   
+    
+    <div class="inlineddiv" >
+      <div class="leftdiv">
+      Empty
+      </div>
+      <div class="centerdiv">
+		  <div>
+			<form>
+			  <div>Login <input type="text" name="login"/></div>
+			  <div>Password <input type="password" name="login"/></div>
+			  <div>Remember<input type="checkbox" value="remember"/></div>
+			  <div><input type="button" onclick="show('inner');count();" value="Enter"/></div>
+			</form>
+		  </div>
+	</div>
+	  <div class="rightdiv">
+	  <div class="inlineddiv2">
+	  <div>Stats Users:</div> <div id="cnt"></div>
+	  </div>
+		  <div>Files: #</div>
+		  <div>Valume: # Mb</div>
+		  <div>Valume/user: # Mb</div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="inner" class="blockeddiv">
+  
+    <div class="" >
+      <div class="subheader">
+      Hello someone <a href="#" onclick="show('login');">logout</a>
+      </div>
+    </div>
+   
+   <div class="inlineddiv" >
+      <div class="leftdiv">
+		  <div>
+		  Allowed zip(20Mb); docx(40Mb); pptx(50Mb);
+		  </div>
+		  <div>
+		  Used 27.34 Mb from 100.00 Mb
+		  </div>
+      </div>
+      <div class="centerdiv">
+		  <div>
+		  My files
+		  <table>
+			<thead>
+				<tr>
+				<th>File</th>
+				<th>Size</th>
+				<th>Date</th>
+				<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>someArchieve.zip</td>
+				<td>103.22</td>
+				<td>2014.05.28 19:01:29<td>
+				<td><a class="redlink" href="#">Delete</a></td>
+				</tr>
+				<tr>
+				<td>web_app.zip</td>
+				<td>203.22</td>
+				<td>2014.05.28 9:11:32<td>
+				<td><a class="redlink" href="#">Delete</a></td>
+				</tr>
+			</tbody>
+		  </table>
+		</div>
+		  <div>
+			  <div> Download new file: <input type="file" value="Choose"/></div>
+			  <div><input type="button" onclick="" value="Download"/></div>
+			</div>
+		  <div>
+			  <div> Get file from remote: <input type="text" name="login"/></div>
+			  <div> Put to cloud<input type="checkbox" onclick="" /></div>
+			  <div><input type="button" onclick="" value="Download"/></div>
+		  </div>
+		  </div>
+		  <div class="rightdiv">
+			  <p>
+			  Stats Users:
+			  </p>
+			  <p id="cnt2" ></p>
+		  </div>
+    </div>
+  
+  </div>
+
+  <div class="footer" >
+    atpt34@gmail.com (c), 2018
+  </div>
+  
+  
+  <script>
+  var pageIds = ['login', 'inner'];
+  function show(shown) {
+    pageIds.filter(x => x != shown).forEach(x => document.getElementById(x).style.display='none');
+    document.getElementById(shown).style.display='block';
+  }
+  
+  var counter = 0;
+  function incr() {
+  	counter = counter + 1;
+    return counter;
+  }
+  function count() {
+  	incr();
+  	document.getElementById('cnt').innerHTML = counter;
+  	document.getElementById('cnt2').innerHTML = counter;
+  }
+  </script>
+  </body>
+</html>
